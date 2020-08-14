@@ -40,7 +40,8 @@ gulp.task('copyhtml', function(){
 gulp.task('jade', function() {
     // var YOUR_LOCALS = {};
    
-    gulp.src('./source/*.jade')
+    // gulp.src('./source/*.jade')
+    gulp.src('./source/!(_)*.jade')
       .pipe(plumber())
       .pipe(data(function(){
         let stationData = require('./source/data/stations.json')
@@ -91,14 +92,9 @@ gulp.task('jade', function() {
         .pipe(browserSync.stream())
   );
 
-  gulp.task('bower', function() {
-    return gulp.src(mainBowerFiles())
-        .pipe(gulp.dest('./.tmp/vendors'))
-  });
-
-  gulp.task('vendorJs', ['bower'], function(){
+  gulp.task('vendorJs', function(){
     return gulp.src([
-        './.tmp/vendors/**/*.js',
+        './node_modules/jquery/dist/jquery.min.js',
         './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
       ])
       .pipe(concat('vendors.js'))

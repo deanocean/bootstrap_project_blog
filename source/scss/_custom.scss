@@ -1,0 +1,9 @@
+$blog: #7FFFD4;
+
+.bg-blog {
+    background-color: $blog;
+}
+
+.text-blog {
+    color: darken($blog, 40%);
+}

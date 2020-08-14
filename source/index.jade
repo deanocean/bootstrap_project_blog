@@ -1,36 +1,99 @@
-extend layout.jade
+extend _layout.jade
 
 block navbar
-    - var path = 'index.html'
     include partials/navbar.jade
 
 block content
-    p #{menu.list[1].name}
-
-    .conatiner 內容
-    br 
-    | lorem
-    h1 Content
-
-    ul
-        li
-            a(href="") link
-        li
-            a(href="") link
-        li
-            a(href="") link
-
-    h2: a(href="#"): span 連結
-    h2
-        a(href="#")
-            span 連結
-
     .container
-        form(action="")
-            label(for="email") 請輸入e-mail
-            input#email(type="text")
-            input#email.form-control.input-sm(type="text")
-            input#email(type="text" class="form-control input-sm")
-    
-    h3 gulp watch
-    button(type="button" class="btn btn-primary") Primary
+        nav(aria-label='breadcrumb')
+            ol.breadcrumb.bg-transparent.pl-0
+                li.breadcrumb-item
+                    a.text-blog(href='#') Home
+                li.breadcrumb-item
+                    a.text-blog(href='#') Blog
+                li.breadcrumb-item.active(aria-current='page') How to become a front-end developer?
+        h1.text-blog How to become a front-end developer?
+
+        .row
+            .col-md-8.order-2.order-md-1
+                article
+                    .my-2.text-secondary
+                        small 
+                            span.mr-3 
+                                i.fa.fa-user.mr-1
+                                | Dean
+                            span.mr-3 2020/08/16
+                            span 
+                                i.fa.fa-tag.mr-1 
+                                | Web Development
+                    p A front end web developer is the person who implements web designs through coding languages like HTML, CSS, and JavaScript. Though it’s not as common anymore, front end developers are/were sometimes called “client-side developers” to distinguish them from back end developers who program what goes on behind the scenes like databases. 
+                    h2.text-secondary What Skills do You Use?
+                    p Front end web developers use three primary coding languages to code the website and web app designs created by web designers:
+                    ul
+                        li HTML
+                            code  (HyperText Markup Language)
+                        li CSS
+                            code  (Style Sheet Language)
+                        li Javascript
+                    img.img-fluid(src="https://picsum.photos/id/180/1600/1200")
+                .card.mt-5
+                    .card-header
+                        | Comments
+                    .card-body
+                        .media
+                            img.mr-3(src='https://randomuser.me/api/portraits/men/51.jpg', width='64' height='64' alt='...')
+                            .media-body
+                                h5.mt-0 Dean
+                                .form-group
+                                    textarea.form-control(rows='3')
+                                    button.btn.btn-light.btn-block.mt-2 Submit
+                        .media.mt-3
+                            img.mr-3(src='https://randomuser.me/api/portraits/women/11.jpg', width='64' height='64' alt='...')
+                            .media-body
+                                h5.mt-0 Mary
+                                | Cras sit amet nibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                p.mt-1
+                                    small.text-muted About 6 hours ago
+                        .media.mt-3
+                            img.mr-3(src='https://randomuser.me/api/portraits/women/12.jpg', width='64' height='64' alt='...')
+                            .media-body
+                                h5.mt-0 Jessica
+                                |     CNulla vel metus snunc ac nisi vulputate sollicitudin. Cras purus odio,ras sit amet nibh libero, in gravida nulla. fringilla. Donec lacinia congue felis in faucibus.
+                                p.mt-1
+                                    small.text-muted About 8 hours ago
+            .col-md-4.order-1.order-md-2.my-3.my-md-0 
+                h2.text-secondary Tag
+                a.badge.badge-info.mr-1(href='#') 
+                    i.fa.fa-tag.mr-1
+                    | Info
+                a.badge.badge-info.mr-1(href='#') 
+                    i.fa.fa-tag.mr-1
+                    | html
+                a.badge.badge-info.mr-1(href='#') 
+                    i.fa.fa-tag.mr-1
+                    | css
+                a.badge.badge-info.mr-1(href='#') 
+                    i.fa.fa-tag.mr-1
+                    | javascript
+                a.badge.badge-info.mr-1(href='#') 
+                    i.fa.fa-tag.mr-1
+                    | Bootstrap
+                a.badge.badge-info.mr-1(href='#') 
+                    i.fa.fa-tag.mr-1
+                    | sass
+                a.badge.badge-info.mr-1(href='#') 
+                    i.fa.fa-tag.mr-1
+                    | Vue.js
+                a.badge.badge-info.mr-1(href='#') 
+                    i.fa.fa-tag.mr-1
+                    | RWD
+    footer.bg-light.py-4.mt-5
+        .container.d-flex.justify-content-between
+            div © Copyright 2020 Dean Huang        
+            div 
+                a.text-blog
+                    i.fab.fa-facebook-square
+                a.text-blog.ml-2
+                    i.fab.fa-twitter-square
+                a.text-blog.ml-2
+                    i.fab.fa-instagram-square
